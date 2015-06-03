@@ -22,7 +22,6 @@ define ldconfig::conf_snippet (
           file { "$ldconfig::basedir/$realname.conf":
             ensure  => present,
             source  => "$realsource",
-            require => Package['ldconfigPackage'],
             notify  => Exec['ldconfig-rebuild'],
           } # file
         } # '':
@@ -31,7 +30,6 @@ define ldconfig::conf_snippet (
           file { "$ldconfig::basedir/$realname.conf":
             ensure  => present,
             content => $content,
-            require => Package['ldconfigPackage'],
             notify  => Exec['ldconfig-rebuild'],
           } # file
         } # default:

@@ -8,6 +8,5 @@ define ldconfig::snippet (
     content  => $content,
     source   => $source,
     filename => $name,
-    require  => Package['ldconfigPackage'],
   } # ldconfig::conf_snippet
 } # define ldconfig::snippet
