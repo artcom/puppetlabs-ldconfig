@@ -9,11 +9,6 @@ class ldconfig {
   # default directory for snippets
   $basedir = '/etc/ld.so.conf.d'
 
-  package { 'glibc':
-    ensure => installed,
-    alias  => 'ldconfigPackage',
-  } # package
-
   exec { 'ldconfig-rebuild':
     refreshonly => true,
     path        => '/sbin',
